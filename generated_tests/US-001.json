@@ -1,0 +1,31 @@
+{
+  "story_id": "US-001",
+  "app": "DetoxAcademy",
+  "screen": "LoginScreen",
+  "test_cases": [
+    {
+      "name": "Valid Login",
+      "steps": [
+        "tap the element with testID login-username-input and type 'jane'",
+        "tap the element with testID login-password-input and type 'pass'",
+        "tap the element with testID login-submit-button"
+      ],
+      "expected": "the Sign in button is enabled"
+    },
+    {
+      "name": "Invalid Username",
+      "steps": [
+        "tap the element with testID login-username-input and type 'locked'"
+      ],
+      "expected": "an error message is shown on screen"
+    },
+    {
+      "name": "Empty Fields",
+      "steps": [
+        "tap the element with testID login-username-input",
+        "tap the element with testID login-password-input"
+      ],
+      "expected": "the Sign in button remains disabled"
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "id": "US-001",
+  "title": "User login",
+  "app": "DetoxAcademy",
+  "screen": "LoginScreen",
+  "description": "As a user, I want to sign in with a username and password so that I can access the lessons.",
+  "acceptance_criteria": [
+    "Given the login screen is shown, when I enter a username and a password of at least 4 characters, then the Sign in button becomes enabled.",
+    "When I tap Sign in with valid credentials, then I am taken past the login screen (no error shown).",
+    "When I enter the username 'locked' with any 4+ character password and tap Sign in, then an error message is shown on screen.",
+    "When the username or password field is empty, then the Sign in button remains disabled."
+  ],
+  "known_elements": {
+    "username_input": "login-username-input",
+    "password_input": "login-password-input",
+    "remember_switch": "login-remember-switch",
+    "submit_button": "login-submit-button",
+    "error_text": "login-error-text",
+    "hint_text": "login-hint-text"
+  }
+}
