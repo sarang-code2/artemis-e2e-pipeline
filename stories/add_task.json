@@ -1,0 +1,22 @@
+{
+  "id": "US-001",
+  "title": "Add a task from the Today screen",
+  "app": "ADYA",
+  "package": "com.sarangupadhye.adya",
+  "screen": "TodayScreen (app/(tabs)/index.tsx)",
+  "description": "As a user, I want to type a task into the quick-add field on the Today screen and add it, so that it shows up in my task list without needing to sign in.",
+  "note": "No sign-in required for this flow — sign-in (Google/Apple/email via Firebase) is a separate optional modal and must not be exercised by automated tests, since it involves real account credentials.",
+  "acceptance_criteria": [
+    "Given the Today screen is shown, when I type a task title into the quick-add input, then an 'Add task' button and a timer stepper appear.",
+    "When I tap 'Add task' with a non-empty title, then the input clears and the new task appears in the task list below.",
+    "When I type a task title containing a natural-language date/time (e.g. 'tomorrow at 5pm'), then a parsed date is shown above the Add task button before I submit.",
+    "When the quick-add input is empty, then no 'Add task' button is shown."
+  ],
+  "known_elements": {
+    "quick_add_input": { "type": "placeholder-text-input", "note": "placeholder text is passed as a prop; look for the empty text input on the Today screen" },
+    "destination_list_button": { "accessibilityLabel": "Destination list" },
+    "decrease_timer_button": { "accessibilityLabel": "Decrease timer" },
+    "increase_timer_button": { "accessibilityLabel": "Increase timer" },
+    "add_task_button": { "text": "Add task" }
+  }
+}

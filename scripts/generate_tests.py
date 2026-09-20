@@ -14,10 +14,10 @@ PROMPT_TEMPLATE = """You are a QA engineer writing mobile E2E test cases for an 
 
 Given this user story (JSON), produce test cases as a JSON array. Each test case must have:
 - "name": short test case name
-- "steps": array of plain-English instructions ARTEMIS can execute one at a time (e.g. "tap the element with testID login-username-input and type 'jane'")
+- "steps": array of plain-English instructions ARTEMIS can execute one at a time, describing the on-screen element visually or by its accessibility label/text (e.g. "tap the text input with placeholder text and type 'Buy milk'", "tap the button labeled 'Add task'")
 - "expected": plain-English assertion of what should be true at the end
 
-Cover the happy path, the error path, and any validation/disabled-state cases implied by the acceptance criteria. Use the known_elements testIDs in your steps where relevant.
+Cover the happy path and any validation/disabled-state cases implied by the acceptance criteria. Use the known_elements descriptions in your steps where relevant. Never include steps that sign in, log in, or enter account credentials, even if the app has a sign-in screen — only automate flows that work without authentication.
 
 Return ONLY a raw JSON array, no prose, no markdown fences.
 

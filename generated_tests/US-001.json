@@ -1,31 +1,55 @@
 {
   "story_id": "US-001",
-  "app": "DetoxAcademy",
-  "screen": "LoginScreen",
+  "app": "ADYA",
+  "screen": "TodayScreen (app/(tabs)/index.tsx)",
   "test_cases": [
     {
-      "name": "Valid Login",
+      "name": "Add task from today screen",
       "steps": [
-        "tap the element with testID login-username-input and type 'jane'",
-        "tap the element with testID login-password-input and type 'pass'",
-        "tap the element with testID login-submit-button"
+        "tap the text input with placeholder text",
+        "tap the text input field with placeholder text and type 'Buy milk'",
+        "tap the 'Add task' button"
       ],
-      "expected": "the Sign in button is enabled"
+      "expected": "The input field should be empty and the 'Add task' button should appear"
     },
     {
-      "name": "Invalid Username",
+      "name": "Add task with date/time",
       "steps": [
-        "tap the element with testID login-username-input and type 'locked'"
+        "tap the text input with placeholder text",
+        "tap the text input field with placeholder text and type 'tomorrow at 5pm'",
+        "the text input field should be empty and the 'Add task' button should appear",
+        "the parsed date should be displayed above the 'Add task' button"
       ],
-      "expected": "an error message is shown on screen"
+      "expected": "The input field should be empty and the 'Add task' button should appear"
     },
     {
-      "name": "Empty Fields",
+      "name": "Empty quick-add input",
       "steps": [
-        "tap the element with testID login-username-input",
-        "tap the element with testID login-password-input"
+        "tap the text input with placeholder text",
+        "the text input field should be empty and the 'Add task' button should not appear"
       ],
-      "expected": "the Sign in button remains disabled"
+      "expected": "The 'Add task' button should not appear"
+    },
+    {
+      "name": "Tap destination list button",
+      "steps": [
+        "tap the button labeled 'Destination list'"
+      ],
+      "expected": "The destination list should appear"
+    },
+    {
+      "name": "Tap decrease timer button",
+      "steps": [
+        "tap the button labeled 'Decrease timer'"
+      ],
+      "expected": "The timer should decrease"
+    },
+    {
+      "name": "Tap increase timer button",
+      "steps": [
+        "tap the button labeled 'Increase timer'"
+      ],
+      "expected": "The timer should increase"
     }
   ]
 }
